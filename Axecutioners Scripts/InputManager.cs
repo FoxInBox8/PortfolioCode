@@ -20,7 +20,7 @@ public class InputManager : MonoBehaviour
 	private InputDevice mouse = new InputDevice();
 	private InputDevice[] gamepads = new InputDevice[2];
 	
-	void Start()
+	private void Start()
 	{
 		// Get the input devices
 		searchInputDevices();
@@ -28,10 +28,6 @@ public class InputManager : MonoBehaviour
 		// Assign initial schemes to the players
 		setInputScheme(1, RoundManager.playerInputSchemes[0]);
 		setInputScheme(2, RoundManager.playerInputSchemes[1]);
-
-		// Add the searchInputDevices call to the onDeviceChange action callback
-		// This makes sure that any time a device is changed, we know about it
-		InputSystem.onDeviceChange += deviceChange;
 
 		gameUIManager = FindObjectOfType<GameUIManager>();
 		
@@ -41,8 +37,19 @@ public class InputManager : MonoBehaviour
 		setInputScheme(1, InputScheme.GAMEPAD);
 	}
 
-	//need to init at a specific time for networking
-	public void NetworkInit()
+    private void OnEnable()
+    {
+        // This makes sure that any time a device is changed, we know about it
+        InputSystem.onDeviceChange += deviceChange;
+    }
+
+    private void OnDisable()
+    {
+        InputSystem.onDeviceChange -= deviceChange;
+    }
+
+    //need to init at a specific time for networking
+    public void NetworkInit()
 	{
         //playerControllers[0] = player1.GetComponent<PlayerScript>();
         //playerControllers[1] = player2.GetComponent<PlayerScript>();
