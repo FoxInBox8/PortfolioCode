@@ -2,11 +2,6 @@ Code examples for Aaron Lurie's portfolio.
 
 OTHER CODE CONTRIBUTORS:
 
-Doom: Amelia Earhart contributors:
-Ryan Tucker: Programmer
-Karim Elzanaty: Programmer
-Ilan Fiarman: Designer
-
 Axecutioners contributors:
 Michael Kashian: Gameplay Programmer
 Neal Wojtowicz: Networking Programmer
