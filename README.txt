@@ -4,7 +4,7 @@ OTHER CODE CONTRIBUTORS:
 
 Axecutioners contributors:
 Michael Kashian: Gameplay Programmer
-Neal Wojtowicz: Networking Programmer
+Neal Wojtowicz: Network Programmer
 Benji Linden: Technical Designer
 Griffin Quayle: Systems Designer
 Michael St. Louis: Audio Engineer
